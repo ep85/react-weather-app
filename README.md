@@ -1,7 +1,8 @@
 # react-Natice-Weather-App
 <p>Frontend built in React Native, backend in NodeJS</p>
 <a href="https://www.linkedin.com/in/eric-palumbo-8a7a4964/">Built by Eric Palumbo</a>
-<br>
+<br/>
+<br/>
 <img src="weatherAPP/assets/images/screenshot.png"/>
 
 <h1>Intro</h1>
