@@ -1,5 +1,5 @@
-# react-Natice-Weather-App
-<p>Frontend built in React Native, backend in NodeJS</p>
+# React-Natice-Weather-App
+<p>Frontend built in React Native, backend in NodeJS, using weather api</p>
 <a href="https://www.linkedin.com/in/eric-palumbo-8a7a4964/">Built by Eric Palumbo</a>
 <br/>
 <br/>
