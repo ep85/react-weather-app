@@ -37,15 +37,13 @@ export default class WeatherList extends Component{
             
             <View style={{marginBottom: 10}}>
                 <Text>Forcast:{this.state.weather.forcast.shortForecast}</Text>
+                <Text>Details:{this.state.weather.forcast.detailedForecast}</Text>
                 <Text>Temperature:{this.state.weather.forcast.temperature}{' ' +this.state.weather.forcast.temperatureUnit}</Text>
                 <Text>Wind Speed:{this.state.weather.forcast.windSpeed}</Text>
                 <Text>Wind Direction:{this.state.weather.forcast.windDirection}</Text>
                 {/* {this.state.weather} */}
             </View>
-            <Button
-
-            backgroundColor='#03A9F4'
-             />
+            
         </Card>
             </View>
         )
