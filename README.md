@@ -1,6 +1,7 @@
 # react-weather-app
 backend and frontend of weather app<br>
-<img src="weatherApp/assets/images/screenshot.png"/>
+<img src="weatherAPP/assets/images/screenshot.png"/>
+
 <h1>Intro</h1>
 <p> Weather app <p>
 <p>Enter your zipcode and the most recent weather for the current time will be grabbed from the weather.gov api which weather.org uses as well<p>
