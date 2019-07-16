@@ -15,26 +15,37 @@ export default class WeatherList extends Component{
           zipcode: this.state.zipcode
         }
       })
-      .then(function(response){
-        this.setState({ weather: response.data })
-    });
+      .then(res => {
+        this.setState({ weather: res.data })
+    })
 
   }
   renderCardComponent(){
-    if(this.state.viewSection) {
+
+    if(this.state.weather) {
+        var image
+        if(!this.state.weather.forcast.isDaytime){
+            image=require("../assets/images/night.jpg")
+        }else{
+            image=require("../assets/images/day.jpg")
+        }
         return (
             <View>
-                <Card
+            <Card
             title={"Weather in " + this.state.zipcode}
-            >
-            <Text style={{marginBottom: 10}}>
-                {this.state.weather}
-            </Text>
+            image={image}>
+            
+            <View style={{marginBottom: 10}}>
+                <Text>Forcast:{this.state.weather.forcast.shortForecast}</Text>
+                <Text>Temperature:{this.state.weather.forcast.temperature}{' ' +this.state.weather.forcast.temperatureUnit}</Text>
+                <Text>Wind Speed:{this.state.weather.forcast.windSpeed}</Text>
+                <Text>Wind Direction:{this.state.weather.forcast.windDirection}</Text>
+                {/* {this.state.weather} */}
+            </View>
             <Button
 
             backgroundColor='#03A9F4'
-            buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-            title='VIEW NOW' />
+             />
         </Card>
             </View>
         )
@@ -43,17 +54,18 @@ export default class WeatherList extends Component{
 
   render () {
     return (
-      <View>
-        <View style={{ marginBottom: 10 }}>
-          <Text>Enter Zipcode</Text>
-          <Input
-            value={this.state.zicode}
-            onChangeText={zipcode => this.setState({ zipcode })}
-          />
+      <View >
+        <View style={{ marginLeft:20,marginRight:20 }}>
+            <View style={{ marginBottom: 10}}>
+            <Text>Enter Zipcode</Text>
+            <Input
+                value={this.state.zicode}
+                onChangeText={zipcode => this.setState({ zipcode })}
+            />
+            </View>
+
+            <Button onPress={this.handleSubmit} title="Submit" />
         </View>
-
-        <Button onPress={this.handleSubmit} title="Submit" />
-
         {this.renderCardComponent()}
       </View>
     );

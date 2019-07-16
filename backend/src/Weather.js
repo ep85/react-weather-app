@@ -3,8 +3,9 @@ var request= require('request')
 class Weather{
     getLatandLong(req,res){
         var zipInfo = zipcodes.lookup(req.body.zipcode);
+        var query=zipInfo.latitude + ','+zipInfo.longitude+'/forecast';
         var options = { method: 'GET',
-            url: 'https://api.weather.gov/points/39.7456,-97.0892/forecast',
+            url: 'https://api.weather.gov/points/'+query,
             headers: 
             { 'cache-control': 'no-cache',
                 Connection: 'keep-alive',

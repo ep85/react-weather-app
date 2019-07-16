@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 
-import { MonoText } from '../components/StyledText';
+
 import  WeatherList  from '../components/WeatherList';
 
 export default function HomeScreen() {
@@ -28,10 +28,8 @@ export default function HomeScreen() {
         </View>
 
         
-        <View style={styles.zipContainer}>
-          <WeatherList/>
-        </View>
         
+        <WeatherList/>
 
         
       </View>
