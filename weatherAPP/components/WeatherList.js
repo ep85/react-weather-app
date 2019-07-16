@@ -8,17 +8,17 @@ export default class WeatherList extends Component{
 
   handleSubmit = async () => {
     //call backend
-    axios.get('https://rallycoding.herokuapp.com/api/music_albums')
+    axios({
+        method: 'post',
+        url: 'http://localhost:5000/weather',
+        data: {
+          zipcode: this.state.zipcode
+        }
+      })
       .then(function(response){
-            this.setState({ lat: response.latitude })
-            this.setState({ long: response.longitude })
+        this.setState({ weather: response.data })
     });
-    //call weather
-    axios.get('https://rallycoding.herokuapp.com/api/music_albums')
-    .then(response => 
-        this.setState({ weather: response.data }
-    ));
-    this.setState({viewSection:true})
+
   }
   renderCardComponent(){
     if(this.state.viewSection) {
@@ -48,7 +48,7 @@ export default class WeatherList extends Component{
           <Text>Enter Zipcode</Text>
           <Input
             value={this.state.zicode}
-            onChangeText={zicode => this.setState({ zicode })}
+            onChangeText={zipcode => this.setState({ zipcode })}
           />
         </View>
 

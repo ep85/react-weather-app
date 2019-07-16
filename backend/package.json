@@ -2,10 +2,18 @@
   "name": "test_backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
+    "request": "^2.88.0",
+    "robinhood": "^1.6.4",
+    "zipcodes": "^8.0.0"
+  }
 }

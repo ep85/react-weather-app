@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const request = require("request");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
 const Weather=require("./src/Weather.js");
@@ -16,8 +15,8 @@ app.all("*", function(req, res, next) {
 });
 
 app.use(express.static(path.join(__dirname, "public")));
-app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 let weather = new Weather();
 app.post("/weather", (req, res) => weather.getLatandLong(req,res));
 
